@@ -375,7 +375,7 @@
         /* From Uiverse.io by gamerx151 */
         .tooltip-container {
             background-color: rgba(103, 80, 164, 0.8); /* Фиолетовый цвет с прозрачностью 0.5 */
-            position: absolute;
+            position: fixed;
             top: 70%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -384,9 +384,10 @@
             padding: 0.7em 0.7em;
             border-radius: 50px;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
         .tooltip-container:hover {
-            background: #fff;
+            background: #F3EDF7;
             transition: all 0.9s;
         }
         .tooltip-container .text {
@@ -400,40 +401,6 @@
             fill: #6750A4;
             transition: all 0.9s;
         }
-
-        /* Inicio do tooltip twitter */
-        .tooltip1 {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            visibility: hidden;
-            background: #000000;
-            fill: #001722;
-            padding: 10px;
-            border-radius: 50px;
-            transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
-            z-index: 1;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .tooltip-container:hover .tooltip1 {
-            top: 150%;
-            opacity: 1;
-            visibility: visible;
-            background: #fff;
-            border-radius: 50px;
-            transform: translate(-50%, -5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .tooltip-container:hover .tooltip1:hover {
-            background: #03a9f4;
-            fill: #fff;
-        }
-        /* Fim do tooltip twitter */
 
         /* Inicio do tooltip facebook */
         .tooltip2 {
@@ -499,7 +466,7 @@
             justify-content: center;
         }
         .tooltip-container:hover .tooltip3:hover {
-            background: #1db954;
+            background: #03a9f4;
             fill: #000000;
         }
         /* Fim do tooltip whatsApp */
@@ -693,6 +660,85 @@
             border-radius: 50%;
             z-index: -1;
         }
+	/* From Uiverse.io by MUJTABA201566 */ 
+	.Btn.logout-btn {
+  	display: flex;
+  	align-items: center;
+  	justify-content: flex-start;
+  	width: 45px;
+  	height: 45px;
+  	border: none;
+  	border-radius: 50%;
+  	cursor: pointer;
+  	position: absolute;
+  	top: 80%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	overflow: hidden;
+  	transition-duration: 0.3s;
+  	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  	background-color: rgba(103, 80, 164, 0.8);
+	}
+
+	/* plus sign */
+	.logout-btn .sign {
+  	width: 100%;
+  	transition-duration: 0.3s;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+	}
+
+	.logout-btn .sign svg {
+  	width: 17px;
+	}
+
+	.logout-btn .sign svg path {
+  	fill: #F3EDF7;
+	}
+
+	/* text */
+	.logout-btn .text {
+  	position: absolute;
+  	right: 0%;
+  	width: 0%;
+  	opacity: 0;
+  	color: #F3EDF7;
+  	font-size: 1.2em;
+  	font-weight: 600;
+  	transition-duration: 0.3s;
+	}
+
+	/* hover effect on button width */
+	.logout-btn:hover {
+  	background-color: #6750A4;
+  	width: 125px;
+  	border-radius: 40px;
+  	transition-duration: 0.3s;
+	}
+
+	.logout-btn:hover .sign {
+  	width: 30%;
+  	transition-duration: 0.3s;
+  	padding-left: 10px;
+	}
+
+	.logout-btn:hover .sign svg path {
+  	fill: white;
+	}
+
+	/* hover effect button's text */
+	.logout-btn:hover .text {
+  	opacity: 1;
+  	width: 70%;
+  	transition-duration: 0.3s;
+  	padding-right: 10px;
+	}
+
+	/* button click effect */
+	.logout-btn:active {
+  	transform: translate(2px, 2px);
+	}
     </style>
 </head>
 <body>
@@ -757,7 +803,7 @@
                     <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"></path>
                 </svg>
             </span>
-            <span class="tooltip1">
+            <span class="tooltip3">
                 <svg viewBox="0 0 16 16" class="bi bi-twitter" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"></path>
                 </svg>
@@ -765,11 +811,6 @@
             <span class="tooltip2">
                 <svg viewBox="0 0 16 16" class="bi bi-facebook" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
-                </svg>
-            </span>
-            <span class="tooltip3">
-                <svg viewBox="0 0 16 16" class="bi bi-whatsapp" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
                 </svg>
             </span>
             <span class="tooltip4">
@@ -801,6 +842,17 @@
             <span class="tooltip9"> </span>
         </div>
     </div>
+    <!-- From Uiverse.io by MUJTABA201566 --> 
+	<button class="Btn logout-btn">
+  	<div class="sign">
+    	<svg viewBox="0 0 512 512">
+  	    <path
+ 	       d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 	14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"
+  	    ></path>
+  	  </svg>
+ 	 </div>
+ 	 <div class="text">Logout</div>
+	</button>
     <div class="instruction">
         Instruction<br>Select your .txt file, copy the exit command and go to CDC Terminal
     </div>
