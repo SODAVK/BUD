@@ -376,7 +376,7 @@
         .tooltip-container {
             background-color: rgba(103, 80, 164, 0.8); /* Фиолетовый цвет с прозрачностью 0.5 */
             position: absolute;
-            top: 65%;
+            top: 70%;
             left: 50%;
             transform: translate(-50%, -50%);
             cursor: pointer;
@@ -852,7 +852,6 @@
         // Copy to clipboard
         copyContainer.addEventListener('click', () => {
             navigator.clipboard.writeText(copyContainer.dataset.command).then(() => {
-                alert('Command copied to clipboard!');
             });
         });
     </script>
