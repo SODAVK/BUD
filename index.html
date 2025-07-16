@@ -888,7 +888,7 @@
                    const content = event.target.result;
                    const totalChars = content.length;
                    if (totalChars > 375) {
-                       alert(`Количество символов в файле (${totalChars}) что превышает текущий лимит в 375 символов. Воспользуйтесь приложением для загрузки больших скриптов`);
+                       alert(`Количество символов в файле (${totalChars}) что превышает текущий лимит в 375 символов. Воспользуйтесь приложением для загрузки больших скриптов или разбейте скрипт на две части и поочереди загрузите`);
                        document.getElementById('fileInput').value = ''; // Очистка поля выбора файла
                    } else {
                        container.style.display = 'none';
