@@ -883,18 +883,24 @@
         container.querySelector('.custom-file-upload input[type="file"]').addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (file) {
-                container.style.display = 'none';
-                loader.style.display = 'block';
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    const content = event.target.result;
-                    const escapedContent = content.replace(/\n/g, '\\n');
-                    const command = `write ${escapedContent}`;
-                    setTimeout(() => {
-                        loader.style.display = 'none';
-                        copyContainer.style.display = 'flex';
-                        copyContainer.dataset.command = command;
-                    }, 2000);
+               const reader = new FileReader();
+               reader.onload = (event) => {
+                   const content = event.target.result;
+                   const totalChars = content.length;
+                   if (totalChars > 375) {
+                       alert(`Количество символов в файле (${totalChars}) что превышает текущий лимит в 375 символов. Воспользуйтесь приложением для загрузки больших скриптов`);
+                       document.getElementById('fileInput').value = ''; // Очистка поля выбора файла
+                   } else {
+                       container.style.display = 'none';
+                       loader.style.display = 'block';
+                       const escapedContent = content.replace(/\n/g, '\\n');
+                       const command = `write ${escapedContent}`;
+                       setTimeout(() => {
+                           loader.style.display = 'none';
+                           copyContainer.style.display = 'flex';
+                           copyContainer.dataset.command = command;
+                       }, 2000);
+                   }
                 };
                 reader.readAsText(file);
             }
